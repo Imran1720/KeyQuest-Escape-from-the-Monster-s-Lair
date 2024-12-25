@@ -4,15 +4,16 @@ public class PlayerController : MonoBehaviour
 {
 
     float xInput, yInput;
+    [Header("Components")]
+    public Rigidbody2D rb;
+    public Animator playerAnimator;
 
-    [Header("Movement data")]
+    [Header("Movement Info")]
     public float moveSpeed;
 
-    [Header("Animator data")]
-    public Animator myAnim;
 
-    [Header("Rigidbody data")]
-    public Rigidbody2D rb;
+    public float jumpForce;
+
 
     [Header("Box Collider Data")]
     public BoxCollider2D playerCollider;
@@ -21,73 +22,77 @@ public class PlayerController : MonoBehaviour
     public Vector2 crouchOffset;
     public Vector2 crouchSize;
 
-    // Start is called before the first frame update
-    void Start()
+    [Header("Ground Check Data")]
+    public float groundCheckDistance;
+    public LayerMask whatIsGround;
+
+    private void Start()
     {
-        //boxcollider
+        rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+
         defaultOffset = playerCollider.offset;
         defaultSize = playerCollider.size;
     }
 
-    //crouch boxcollider offset - .61 sizey - 1.34
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
-
-        //move animation
-        StartMovementAnimation();
-
-        //set jump animation
-        myAnim.SetBool("IsJumping", yInput > 0);
-
-        //Crouching mechanism
-        Crouch();
-
-        //flip character
+        yInput = Input.GetAxisRaw("Jump");
+        PlayerMovement();
         Flip();
-    }
+        Crouch();
+        SetPlayerAnimation();
 
-    private void FixedUpdate()
-    {
-        //move only if not crouching
-        if (!myAnim.GetBool("IsCrouching"))
-        {
-
-            rb.velocity = (new Vector2(xInput, rb.velocity.y)).normalized * moveSpeed;
-        }
-        else//stoping movement if crouching
-        {
-            rb.velocity = Vector2.zero;
-        }
     }
 
     private void Crouch()
     {
-        //crouch and shrink collider size if LEFT CTRL button pressed.
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (CheckGrounded() && Input.GetKeyDown(KeyCode.LeftControl))
         {
-            myAnim.SetBool("IsCrouching", true);
+            SetVelocity(0, yInput);
+            playerAnimator.SetBool("IsCrouching", true);
             playerCollider.offset = crouchOffset;
             playerCollider.size = crouchSize;
-        }//enter coresponding state and change collider size if LEFT CTRL button released.
+        }
         else if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            myAnim.SetBool("IsCrouching", false);
+            playerAnimator.SetBool("IsCrouching", false);
             playerCollider.offset = defaultOffset;
             playerCollider.size = defaultSize;
         }
     }
-    public void StartMovementAnimation()
+
+    private void SetPlayerAnimation()
     {
-        myAnim.SetFloat("Speed", Mathf.Abs(xInput));
+        if (xInput != 0 && CheckGrounded())
+        {
+            playerAnimator.SetFloat("Speed", Mathf.Abs(rb.velocity.x * xInput));
+        }
+        else
+        {
+            playerAnimator.SetFloat("Speed", 0);
+        }
+
+        if (yInput > 0 && CheckGrounded())
+        {
+            playerAnimator.SetBool("IsJumping", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsJumping", false);
+        }
     }
-    public void Flip()
+
+    bool CheckGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
+    }
+
+    void Flip()
     {
         Vector3 scale = transform.localScale;
-        Debug.Log(xInput < 0);
+
         if (xInput < 0)
         {
             scale.x = -1 * Mathf.Abs(scale.x);
@@ -98,6 +103,30 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.localScale = scale;
+    }
+
+    void PlayerMovement()
+    {
+
+        if (xInput != 0 && !playerAnimator.GetBool("IsCrouching"))
+        {
+            SetVelocity(xInput * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            SetVelocity(0, rb.velocity.y);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded())
+        {
+
+            SetVelocity(rb.velocity.x, jumpForce);
+        }
+    }
+
+    void SetVelocity(float xVelocity, float yVelocity)
+    {
+        rb.velocity = new Vector2(xVelocity, yVelocity);
     }
 
 }
