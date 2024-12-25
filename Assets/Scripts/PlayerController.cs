@@ -17,17 +17,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");
-        myAnim.SetFloat("Speed", Mathf.Abs(xInput));
-        Flip();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            myAnim.SetBool("IsJumping", true);
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            myAnim.SetBool("IsJumping", false);
+        yInput = Input.GetAxisRaw("Vertical");
+        Move();
+        //jump check
+        myAnim.SetBool("IsJumping", yInput > 0);
 
+        //Crouching mechanism
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            myAnim.SetBool("IsCrouching", true);
         }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            myAnim.SetBool("IsCrouching", false);
+        }
+
+        //flip character
+        Flip();
     }
 
     private void FixedUpdate()
@@ -35,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void Move()
+    {
+        myAnim.SetFloat("Speed", Mathf.Abs(xInput));
+    }
     public void Flip()
     {
         Vector3 scale = transform.localScale;
