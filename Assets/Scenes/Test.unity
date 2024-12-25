@@ -195,6 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myAnim: {fileID: 508185054}
+  playerCollider: {fileID: 508185057}
+  crouchOffset: {x: 0.000733614, y: 0.61}
+  crouchSize: {x: 0.4315338, y: 1.34}
 --- !u!1 &1136167697
 GameObject:
   m_ObjectHideFlags: 0
