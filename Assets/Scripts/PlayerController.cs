@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Info")]
     public float moveSpeed;
 
+    public ScoreTracker tracker;
 
     public float jumpForce;
 
@@ -129,4 +130,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(xVelocity, yVelocity);
     }
 
+    internal void GetKey(int value)
+    {
+        tracker.IncreaseKeyCount(value);
+    }
 }
