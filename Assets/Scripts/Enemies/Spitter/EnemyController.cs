@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Movement Info")]
     public float moveSpeed;
-    int facingDirection = 1;
+    public int facingDirection = 1;
     bool isGroundDetected;
     public float idleTime;
 
@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour
 
 
     //collision detection
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.GetComponent<PlayerController>() != null)
@@ -108,4 +108,5 @@ public class EnemyController : MonoBehaviour
             collision.gameObject.GetComponent<PlayerController>().DecreasePlayerHealth();
         }
     }
+
 }
