@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FallDetector : MonoBehaviour
 {
@@ -8,7 +7,8 @@ public class FallDetector : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            collision.gameObject.GetComponent<PlayerController>().DecreasePlayerHealth();
+            collision.gameObject.GetComponent<PlayerController>().RespawnPLayer();
         }
     }
 }

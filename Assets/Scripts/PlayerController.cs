@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Info")]
     public int playerHealth;
+    public GameObject playerSpawnPoint;
 
     [Header("Movement Info")]
     public float moveSpeed;
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            GameManager.Instance.RestartGame();
+            GameManager.Instance.OpenGameOverMenu();
         }
     }
 
@@ -151,5 +152,10 @@ public class PlayerController : MonoBehaviour
 
             LevelUIManager.Instance.RefreshHealth(playerHealth);
         }
+    }
+
+    public void RespawnPLayer()
+    {
+        transform.position = playerSpawnPoint.transform.position;
     }
 }
