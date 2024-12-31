@@ -19,7 +19,7 @@ public class ScoreTracker : MonoBehaviour
     public void IncreaseKeyCount(int value)
     {
         score += value;
-
+        GameManager.Instance.portalKeys = score;
         RefreshScore(score);
     }
 

@@ -97,4 +97,15 @@ public class EnemyController : MonoBehaviour
         Vector3 target = detectionPoint.transform.position - (Vector3.up * detectionLenth);
         Gizmos.DrawLine(detectionPoint.transform.position, target);
     }
+
+
+    //collision detection
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.GetComponent<PlayerController>() != null)
+        {
+            collision.gameObject.GetComponent<PlayerController>().DecreasePlayerHealth();
+        }
+    }
 }

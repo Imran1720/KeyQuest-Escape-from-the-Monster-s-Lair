@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator playerAnimator;
 
+    [Header("Player Info")]
+    public int playerHealth;
+
     [Header("Movement Info")]
     public float moveSpeed;
 
@@ -16,14 +19,15 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
 
-    [Header("Box Collider Data")]
+
+    [Header("Box Collider Info")]
     public BoxCollider2D playerCollider;
     Vector2 defaultOffset;
     Vector2 defaultSize;
     public Vector2 crouchOffset;
     public Vector2 crouchSize;
 
-    [Header("Ground Check Data")]
+    [Header("Ground Check Info")]
     public float groundCheckDistance;
     public LayerMask whatIsGround;
 
@@ -45,6 +49,10 @@ public class PlayerController : MonoBehaviour
         Crouch();
         SetPlayerAnimation();
 
+        if (playerHealth <= 0)
+        {
+            GameManager.Instance.RestartGame();
+        }
     }
 
     private void Crouch()
@@ -130,8 +138,18 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(xVelocity, yVelocity);
     }
 
-    internal void GetKey(int value)
+    public void GetKey(int value)
     {
         tracker.IncreaseKeyCount(value);
+    }
+
+    public void DecreasePlayerHealth()
+    {
+        if (playerHealth > 0)
+        {
+            playerHealth--;
+
+            LevelUIManager.Instance.RefreshHealth(playerHealth);
+        }
     }
 }
