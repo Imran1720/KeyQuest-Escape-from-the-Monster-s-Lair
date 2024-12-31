@@ -18,6 +18,7 @@ public class KeyController : MonoBehaviour
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             player.GetKey(keyCount);
+
             Destroy(gameObject);
         }
     }
