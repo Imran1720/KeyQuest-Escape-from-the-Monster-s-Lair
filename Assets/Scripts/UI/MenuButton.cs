@@ -24,7 +24,7 @@ public class MenuButton : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (PlayerPrefs.GetInt("Level" + levelIndex) == (int)LevelStatus.unlocked)
+        if (PlayerPrefs.GetInt("Level" + levelIndex) == (int)LevelStatus.unlocked || PlayerPrefs.GetInt("Level" + levelIndex) == (int)LevelStatus.completed)
         {
             LevelManager.Instance.LoadLevel(levelIndex);
         }
