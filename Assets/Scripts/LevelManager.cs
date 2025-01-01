@@ -21,14 +21,11 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     private void Start()
     {
         UnlockLevel(1);
-
-
     }
     public void RestartLevel()
     {
@@ -37,9 +34,10 @@ public class LevelManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        int nextlevel = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextlevel < SceneManager.sceneCountInBuildSettings)
         {
-
+            UnlockLevel(nextlevel);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -67,12 +65,17 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt(level + levelIndex, (int)LevelStatus.unlocked);
     }
 
+    public void SetLevelComplete()
+    {
+        PlayerPrefs.SetInt(level + SceneManager.GetActiveScene().buildIndex, (int)LevelStatus.completed);
+    }
+
     public void ActivatePortal()
     {
-
         if (keyCount >= 3)
         {
-            LoadNextLevel();
+            SetLevelComplete();
+            LevelUIManager.instance.OpenGameCompleteMenu();
         }
     }
 }

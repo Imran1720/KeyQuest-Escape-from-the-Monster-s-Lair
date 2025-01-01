@@ -13,6 +13,7 @@ public class LevelUIManager : MonoBehaviour
 
     [Header("Menus")]
     public GameObject gameOverMenu;
+    public GameObject gameCompleteMenu;
     private void Awake()
     {
         instance = this;
@@ -32,12 +33,11 @@ public class LevelUIManager : MonoBehaviour
         gameOverMenu.SetActive(true);
     }
 
-    public void CloseGameOverMenu()
+    public void OpenGameCompleteMenu()
     {
-        Time.timeScale = 1f;
-        gameOverMenu.SetActive(false);
+        Time.timeScale = 0f;
+        gameCompleteMenu.SetActive(true);
     }
-
 
     public void RefreshScore(int key)
     {
