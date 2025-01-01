@@ -651,7 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c58bda0299a404daaee613c4f8941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 309197782}
 --- !u!1 &375219221
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d745f42372fc37479c8d1279a19fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverMenu: {fileID: 1539586287}
   portalKeys: 0
 --- !u!4 &375219223
 Transform:
@@ -1077,6 +1075,8 @@ MonoBehaviour:
   - {fileID: 1504457061}
   - {fileID: 723784179}
   - {fileID: 1251793019}
+  keyText: {fileID: 309197782}
+  gameOverMenu: {fileID: 1539586287}
 --- !u!1 &723784179
 GameObject:
   m_ObjectHideFlags: 0
@@ -8141,7 +8141,7 @@ GameObject:
   - component: {fileID: 1539586289}
   - component: {fileID: 1539586291}
   m_Layer: 5
-  m_Name: GameOver
+  m_Name: GameOverMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

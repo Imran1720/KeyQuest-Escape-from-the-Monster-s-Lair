@@ -17,12 +17,13 @@ public class UIButton : MonoBehaviour
 
     void Restart()
     {
-        GameManager.Instance.RestartGame();
+        Time.timeScale = 1f;
+        LevelManager.Instance.RestartLevel();
     }
 
     void Menu()
     {
-        GameManager.Instance.Menu();
+        LevelManager.Instance.Menu();
     }
 
 

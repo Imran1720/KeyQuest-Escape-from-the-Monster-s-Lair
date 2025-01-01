@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class MenuButton : MonoBehaviour
 {
     public Button button;
@@ -24,7 +24,10 @@ public class MenuButton : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene(levelIndex);
+        if (PlayerPrefs.GetInt("Level" + levelIndex) == (int)LevelStatus.unlocked)
+        {
+            LevelManager.Instance.LoadLevel(levelIndex);
+        }
     }
 
     public void Quit()

@@ -22,13 +22,9 @@ public class KeyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
     private void Update()
     {
-
         transform.Translate(new Vector3(0, facingDirection * moveSpeed * Time.deltaTime, 0));
-
         FlipDirection();
     }
 

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Info")]
     public float moveSpeed;
 
-    public ScoreTracker tracker;
+    public KeyTracker tracker;
 
     public float jumpForce;
 
@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
         defaultOffset = playerCollider.offset;
         defaultSize = playerCollider.size;
+        Time.timeScale = 1.0f;
     }
 
     private void Update()
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            GameManager.Instance.OpenGameOverMenu();
+            LevelUIManager.Instance.OpenGameOverMenu();
         }
     }
 

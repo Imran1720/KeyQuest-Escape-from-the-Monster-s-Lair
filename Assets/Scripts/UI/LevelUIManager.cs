@@ -1,15 +1,21 @@
+using TMPro;
 using UnityEngine;
 
 public class LevelUIManager : MonoBehaviour
 {
-    public static LevelUIManager Instance { get; private set; }
+    public static LevelUIManager instance;
+    public static LevelUIManager Instance { get { return instance; } }
     [Header("Health UI")]
     public GameObject[] hearts;
 
+    [Header("Key")]
+    public TextMeshProUGUI keyText;
 
+    [Header("Menus")]
+    public GameObject gameOverMenu;
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     public void RefreshHealth(int health)
@@ -19,6 +25,26 @@ public class LevelUIManager : MonoBehaviour
             hearts[i].SetActive(false);
         }
     }
+
+    public void OpenGameOverMenu()
+    {
+        Time.timeScale = 0f;
+        gameOverMenu.SetActive(true);
+    }
+
+    public void CloseGameOverMenu()
+    {
+        Time.timeScale = 1f;
+        gameOverMenu.SetActive(false);
+    }
+
+
+    public void RefreshScore(int key)
+    {
+
+        keyText.text = key + "X";
+    }
+
 
 
 }
