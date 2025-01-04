@@ -77,6 +77,11 @@ public class SoundManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void SetVolume(float vol)
+    {
+        audioSource_SFX.volume = vol;
+    }
 }
 
 [Serializable]
@@ -97,6 +102,11 @@ public enum Sounds
     playerFootStep_1,
     playerFootStep_2,
     Jump,
-    Land
+    Land,
+    LevelEnter,
+    GameWin,
+    GameLoose
+
+
 
 }

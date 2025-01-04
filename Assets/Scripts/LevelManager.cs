@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     }
     private void OnLevelWasLoaded(int level)
     {
+        SoundManager.Instance.SetVolume(.7f);
         requiredKeys = SceneManager.GetActiveScene().buildIndex - 1;
     }
     private void Start()
@@ -58,6 +59,7 @@ public class LevelManager : MonoBehaviour
 
     public void Menu()
     {
+
         SoundManager.Instance.PlaySound(Sounds.LevelStart);
         SceneManager.LoadScene(0);
     }

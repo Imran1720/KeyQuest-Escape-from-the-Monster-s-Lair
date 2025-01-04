@@ -32,11 +32,12 @@ public class PlayerController : MonoBehaviour
     public float groundCheckDistance;
     public LayerMask whatIsGround;
 
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-
+        SoundManager.Instance.PlaySound(Sounds.LevelEnter);
         defaultOffset = playerCollider.offset;
         defaultSize = playerCollider.size;
         Time.timeScale = 1.0f;
@@ -61,6 +62,9 @@ public class PlayerController : MonoBehaviour
         }
         if (playerHealth <= 0)
         {
+            SoundManager.Instance.SetVolume(.05f);
+            SoundManager.Instance.PlaySound(Sounds.GameLoose);
+
             LevelUIManager.Instance.OpenGameOverMenu();
         }
     }
@@ -116,6 +120,7 @@ public class PlayerController : MonoBehaviour
 
         if (xInput < 0)
         {
+
             scale.x = -1 * Mathf.Abs(scale.x);
         }
         else if (xInput > 0)
@@ -187,6 +192,7 @@ public class PlayerController : MonoBehaviour
 
     public void RespawnPLayer()
     {
+        SoundManager.Instance.PlaySound(Sounds.LevelEnter);
         transform.position = playerSpawnPoint.transform.position;
     }
 

@@ -6,7 +6,7 @@ public class FallDetector : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-
+            Debug.Log("Player");
             collision.gameObject.GetComponent<PlayerController>().DecreasePlayerHealth();
             collision.gameObject.GetComponent<PlayerController>().RespawnPLayer();
         }
