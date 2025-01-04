@@ -35,6 +35,7 @@ public class LevelUIManager : MonoBehaviour
 
     public void OpenGameCompleteMenu()
     {
+        SoundManager.Instance.PlaySound(Sounds.portal);
         Time.timeScale = 0f;
         gameCompleteMenu.SetActive(true);
     }

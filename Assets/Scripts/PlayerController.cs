@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public KeyTracker tracker;
 
     public float jumpForce;
-
+    bool canPlayJumpAudio = false, canPlayLandedAudio = false;
 
 
     [Header("Box Collider Info")]
@@ -51,6 +51,14 @@ public class PlayerController : MonoBehaviour
         Crouch();
         SetPlayerAnimation();
 
+        if (!CheckGrounded())
+        {
+            canPlayLandedAudio = true;
+        }
+        if (canPlayLandedAudio && CheckGrounded())
+        {
+            PlayLandedSounds();
+        }
         if (playerHealth <= 0)
         {
             LevelUIManager.Instance.OpenGameOverMenu();
@@ -95,6 +103,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
     bool CheckGrounded()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
@@ -130,8 +140,28 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && CheckGrounded())
         {
+            canPlayJumpAudio = true;
 
             SetVelocity(rb.velocity.x, jumpForce);
+            PlayJumpSounds();
+        }
+    }
+
+    public void PlayJumpSounds()
+    {
+        if (canPlayJumpAudio && CheckGrounded())
+        {
+            canPlayJumpAudio = false;
+            SoundManager.Instance.PlaySound(Sounds.Jump);
+        }
+    }
+
+    public void PlayLandedSounds()
+    {
+        if (canPlayLandedAudio && CheckGrounded())
+        {
+            canPlayLandedAudio = false;
+            SoundManager.Instance.PlaySound(Sounds.Land);
         }
     }
 
@@ -159,4 +189,6 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = playerSpawnPoint.transform.position;
     }
+
+
 }

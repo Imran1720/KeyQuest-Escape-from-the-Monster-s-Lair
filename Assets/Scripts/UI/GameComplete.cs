@@ -18,7 +18,7 @@ public class GameComplete : MonoBehaviour
         }
         else
         {
-            message.text = "You have completed\r\nthis levels!!";
+            message.text = "You have completed\r\nthis level!!";
             nextButton.SetActive(true);
         }
     }

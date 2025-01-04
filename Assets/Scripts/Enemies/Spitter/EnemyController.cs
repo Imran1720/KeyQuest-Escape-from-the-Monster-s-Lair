@@ -29,12 +29,10 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        enemyAnimator.SetFloat("MoveSpeed", rb.velocity.x);
-
         CheckCanMove();
         if (!isGroundDetected)
         {
-            SetVelocity(0, 0);
+            SetVelocity(0, -2);
             StartCoroutine(ChangeDirection());
         }
 
@@ -72,8 +70,9 @@ public class EnemyController : MonoBehaviour
     {
         if (isGroundDetected)
         {
-            SetVelocity(moveSpeed * facingDirection, 0);
+            SetVelocity(moveSpeed * facingDirection, rb.velocity.y);
         }
+
 
     }
 

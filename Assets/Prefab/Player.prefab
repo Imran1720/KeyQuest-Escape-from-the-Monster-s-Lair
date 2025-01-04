@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 508185058}
   - component: {fileID: 508185057}
   - component: {fileID: 508185059}
+  - component: {fileID: 3841207928454516969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -255,7 +256,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 508185058}
   playerAnimator: {fileID: 6154754110226538322}
+  playerHealth: 0
+  playerSpawnPoint: {fileID: 0}
   moveSpeed: 7
+  tracker: {fileID: 0}
   jumpForce: 7
   playerCollider: {fileID: 508185057}
   crouchOffset: {x: 0.000733614, y: 0.61}
@@ -264,3 +268,15 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &3841207928454516969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154754110226538321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123e486b9103ed6429bec27c78216a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

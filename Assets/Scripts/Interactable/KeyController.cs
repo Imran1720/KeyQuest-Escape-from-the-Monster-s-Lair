@@ -16,6 +16,7 @@ public class KeyController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
+            SoundManager.Instance.PlaySound(Sounds.Collect);
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             player.GetKey(keyCount);
 

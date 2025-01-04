@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager Instance { get { return instance; } }
     string level = "Level";
     public int keyCount;
-
+    public int requiredKeys;
     public bool setTime = true;
     private void Awake()
     {
@@ -22,18 +22,23 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void OnLevelWasLoaded(int level)
+    {
+        requiredKeys = SceneManager.GetActiveScene().buildIndex - 1;
+    }
     private void Start()
     {
         UnlockLevel(1);
+
     }
     public void RestartLevel()
     {
-
+        SoundManager.Instance.PlaySound(Sounds.LevelStart);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void LoadNextLevel()
     {
+        SoundManager.Instance.PlaySound(Sounds.LevelStart);
         int nextlevel = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextlevel < SceneManager.sceneCountInBuildSettings)
         {
@@ -44,6 +49,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int _sceneIndex)
     {
+        SoundManager.Instance.PlaySound(Sounds.LevelStart);
         if (_sceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(_sceneIndex);
@@ -52,6 +58,7 @@ public class LevelManager : MonoBehaviour
 
     public void Menu()
     {
+        SoundManager.Instance.PlaySound(Sounds.LevelStart);
         SceneManager.LoadScene(0);
     }
 
@@ -72,7 +79,7 @@ public class LevelManager : MonoBehaviour
 
     public void ActivatePortal()
     {
-        if (keyCount >= 3)
+        if (keyCount >= requiredKeys)
         {
             SetLevelComplete();
             LevelUIManager.instance.OpenGameCompleteMenu();
