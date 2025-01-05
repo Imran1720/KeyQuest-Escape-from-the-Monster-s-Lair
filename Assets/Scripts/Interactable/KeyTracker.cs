@@ -8,11 +8,12 @@ public class KeyTracker : MonoBehaviour
         LevelUIManager.Instance.RefreshScore(key);
     }
 
+    //Increases the count of keys and updates in UI
     public void IncreaseKeyCount(int value)
     {
         key += value;
-        LevelManager.Instance.keyCount = key;
         LevelUIManager.Instance.RefreshScore(key);
+        LevelManager.Instance.keyCount = key;
     }
 
 

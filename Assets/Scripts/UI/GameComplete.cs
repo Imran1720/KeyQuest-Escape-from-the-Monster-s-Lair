@@ -9,6 +9,7 @@ public class GameComplete : MonoBehaviour
 
     private void OnEnable()
     {
+
         homeButton.GetComponent<Button>().onClick.AddListener(GoToHome);
         nextButton.GetComponent<Button>().onClick.AddListener(GoToNextLevel);
         if (PlayerPrefs.GetInt("Level5") == (int)LevelStatus.completed)

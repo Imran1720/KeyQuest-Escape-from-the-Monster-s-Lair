@@ -12,12 +12,15 @@ public class KeyController : MonoBehaviour
     {
         startpos = transform.position;
     }
+
+    //On triggering with the player Increases the Key count and destroys itself(Gameobject)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            SoundManager.Instance.PlaySound(Sounds.Collect);
+            SoundManager.Instance.PlaySFXSound(Sounds.Collect);
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.PlayClaimEffect();
             player.GetKey(keyCount);
 
             Destroy(gameObject);
@@ -25,10 +28,17 @@ public class KeyController : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(new Vector3(0, facingDirection * moveSpeed * Time.deltaTime, 0));
+        MoveKey();
         FlipDirection();
     }
 
+    //Method to Move Key Up and down between two values
+    private void MoveKey()
+    {
+        transform.Translate(new Vector3(0, facingDirection * moveSpeed * Time.deltaTime, 0));
+    }
+
+    //Changing the Direction of key movement if one extremee point is reached
     void FlipDirection()
     {
         if (transform.position.y > startpos.y + .3f)

@@ -186,10 +186,10 @@ TextureImporter:
       name: SpikesNew_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 405
-        width: 328
-        height: 177
+        x: 23
+        y: 402
+        width: 334
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: SpikesNew_1
       rect:
         serializedVersion: 2
-        x: 393
-        y: 411
-        width: 211
-        height: 227
+        x: 380
+        y: 410
+        width: 225
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,10 +295,10 @@ TextureImporter:
       name: SpikesNew_4
       rect:
         serializedVersion: 2
-        x: 631
-        y: 405
-        width: 289
-        height: 197
+        x: 629
+        y: 402
+        width: 294
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: SpikesNew_5
       rect:
         serializedVersion: 2
-        x: 956
-        y: 414
-        width: 215
-        height: 197
+        x: 953
+        y: 405
+        width: 221
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: SpikesNew_8
       rect:
         serializedVersion: 2
-        x: 1225
-        y: 413
-        width: 281
-        height: 229
+        x: 1223
+        y: 409
+        width: 286
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,10 +467,10 @@ TextureImporter:
       name: SpikesNew_10
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 412
-        width: 253
-        height: 160
+        x: 1519
+        y: 410
+        width: 254
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -511,10 +511,10 @@ TextureImporter:
       name: SpikesNew_11
       rect:
         serializedVersion: 2
-        x: 1806
-        y: 405
-        width: 198
-        height: 311
+        x: 1804
+        y: 403
+        width: 197
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,9 +566,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 14
-        width: 382
-        height: 188
+        y: 13
+        width: 383
+        height: 191
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,10 +664,10 @@ TextureImporter:
       name: SpikesNew_14
       rect:
         serializedVersion: 2
-        x: 391
-        y: 24
-        width: 252
-        height: 242
+        x: 389
+        y: 23
+        width: 256
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -729,10 +729,10 @@ TextureImporter:
       name: SpikesNew_15
       rect:
         serializedVersion: 2
-        x: 631
-        y: 23
-        width: 306
-        height: 199
+        x: 629
+        y: 21
+        width: 310
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -784,10 +784,10 @@ TextureImporter:
       name: SpikesNew_16
       rect:
         serializedVersion: 2
-        x: 946
-        y: 24
-        width: 275
-        height: 215
+        x: 945
+        y: 23
+        width: 278
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -852,10 +852,10 @@ TextureImporter:
       name: SpikesNew_17
       rect:
         serializedVersion: 2
-        x: 1229
-        y: 24
-        width: 293
-        height: 244
+        x: 1227
+        y: 22
+        width: 297
+        height: 249
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -915,9 +915,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1496
-        y: 27
-        width: 275
-        height: 182
+        y: 25
+        width: 277
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -963,10 +963,10 @@ TextureImporter:
       name: SpikesNew_19
       rect:
         serializedVersion: 2
-        x: 1793
-        y: 43
-        width: 250
-        height: 318
+        x: 1791
+        y: 41
+        width: 257
+        height: 321
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1016,7 +1016,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b821d085db047ca4d970179265e02b13
     internalID: 0
     vertices: []
     indices: 
@@ -1035,6 +1035,7 @@ TextureImporter:
       SpikesNew_17: 21300022
       SpikesNew_18: 21300024
       SpikesNew_19: 21300026
+      SpikesNew_2: 1981036891
       SpikesNew_4: 21300004
       SpikesNew_5: 21300006
       SpikesNew_8: 21300008
