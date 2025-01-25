@@ -84,6 +84,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444769037}
   m_Enabled: 1
+--- !u!1 &4448515335375906734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6719137102556622693}
+  m_Layer: 7
+  m_Name: Ground Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6719137102556622693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4448515335375906734}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6154754110226538348}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4577854572526892499
 GameObject:
   m_ObjectHideFlags: 0
@@ -4969,7 +5000,6 @@ GameObject:
   - component: {fileID: 508185058}
   - component: {fileID: 508185057}
   - component: {fileID: 508185059}
-  - component: {fileID: 3841207928454516969}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4991,6 +5021,7 @@ Transform:
   m_Children:
   - {fileID: 1444769040}
   - {fileID: 7326562195909104860}
+  - {fileID: 6719137102556622693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5127,31 +5158,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 508185058}
-  playerAnimator: {fileID: 6154754110226538322}
+  characterAnimator: {fileID: 6154754110226538322}
+  moveSpeed: 7
+  detectionLenth: 0.2
+  detectionPoint: {fileID: 6719137102556622693}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
   playerHealth: 3
   playerSpawnPoint: {fileID: 0}
-  moveSpeed: 7
   pushbackForce: 20
-  tracker: {fileID: 0}
   jumpForce: 7
   playerCollider: {fileID: 508185057}
   crouchOffset: {x: 0.000733614, y: 0.61}
   crouchSize: {x: 0.4315338, y: 1.34}
-  groundCheckDistance: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
   claimEffect: {fileID: 6197555922919432504}
---- !u!114 &3841207928454516969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154754110226538321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123e486b9103ed6429bec27c78216a9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 6154754110226538322}
