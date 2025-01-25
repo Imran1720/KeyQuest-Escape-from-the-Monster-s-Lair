@@ -872,7 +872,6 @@ GameObject:
   - component: {fileID: 309197781}
   - component: {fileID: 309197783}
   - component: {fileID: 309197782}
-  - component: {fileID: 309197784}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -998,18 +997,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309197780}
   m_CullTransparentMesh: 1
---- !u!114 &309197784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309197780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c58bda0299a404daaee613c4f8941d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &332541952
 GameObject:
   m_ObjectHideFlags: 0
@@ -16010,7 +15997,7 @@ PrefabInstance:
     - target: {fileID: 508185059, guid: e1e8f73367e66fb40ad0b72eb55db216, type: 3}
       propertyPath: tracker
       value: 
-      objectReference: {fileID: 309197784}
+      objectReference: {fileID: 0}
     - target: {fileID: 508185059, guid: e1e8f73367e66fb40ad0b72eb55db216, type: 3}
       propertyPath: playerHealth
       value: 3
