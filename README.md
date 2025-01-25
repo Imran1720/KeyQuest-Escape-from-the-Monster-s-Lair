@@ -26,7 +26,7 @@ In this 2D platformer, players must navigate through five challenging levels, wi
 
 ## Future Enhancements:
 <ol>
-    <li><b>Features:</b>
+    <li><b><u>Features to be added:</u></b>
     <ul>
         <li>Double Jump</li>
         <li>Player Attacks</li>
