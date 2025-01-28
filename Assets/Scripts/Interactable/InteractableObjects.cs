@@ -3,12 +3,22 @@ using UnityEngine;
 public class InteractableObjects : MonoBehaviour
 {
     protected SoundManager soundManager;
-    protected LevelManager levelManager;
+    protected UIManager uiManager;
 
-    private void Start()
+    // Initialize singleton references in the Start method
+    // This ensures that both UIManager and SoundManager are initialized only once
+    // and are accessible to all derived classes (Door, Key, Spike) without the need for re-initialization.
+    protected virtual void Start()
     {
-        soundManager = SoundManager.Instance;
-        levelManager = LevelManager.Instance;
+        //Initializing soundManager and uiManager
+        if (soundManager == null)
+        {
+            soundManager = SoundManager.Instance;
+        }
+        if (uiManager == null)
+        {
+            uiManager = UIManager.Instance;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

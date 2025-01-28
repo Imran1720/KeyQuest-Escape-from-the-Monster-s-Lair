@@ -2145,7 +2145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d45ff0e4caceb14fb54504475005006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredKeys: 0
+  levelData:
+  - levelName: Lobby
+    levelToLoad: 0
+  - levelName: Level1
+    levelToLoad: 1
+  - levelName: Level2
+    levelToLoad: 2
+  - levelName: Level3
+    levelToLoad: 3
+  - levelName: Level4
+    levelToLoad: 4
+  - levelName: Level5
+    levelToLoad: 5
 --- !u!4 &1196407691
 Transform:
   m_ObjectHideFlags: 0
