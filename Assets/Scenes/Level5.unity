@@ -1992,7 +1992,7 @@ GameObject:
   - component: {fileID: 686741876}
   - component: {fileID: 686741877}
   m_Layer: 0
-  m_Name: Level_UI_Manager
+  m_Name: UI_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2022,7 +2022,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 686741875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59cc7cbd5cdf8143a44045c3a5d727f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cedb6a5dbf482c4a8dd65020c4eb5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hearts:
@@ -3651,7 +3651,7 @@ GameObject:
   - component: {fileID: 723784182}
   - component: {fileID: 723784181}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4452,7 +4452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb100d3fcca5c9499ee843a1921b0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 2
+  buttonType: 0
   screenToShow: {fileID: 0}
   screenToHide: {fileID: 0}
   levelToLoad: 0
@@ -13252,7 +13252,7 @@ GameObject:
   - component: {fileID: 1251793022}
   - component: {fileID: 1251793021}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13536,7 +13536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb100d3fcca5c9499ee843a1921b0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 2
+  buttonType: 0
   screenToShow: {fileID: 0}
   screenToHide: {fileID: 0}
   levelToLoad: 0
@@ -13772,7 +13772,7 @@ GameObject:
   - component: {fileID: 1504457064}
   - component: {fileID: 1504457063}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14215,7 +14215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb100d3fcca5c9499ee843a1921b0a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonType: 2
+  buttonType: 0
   screenToShow: {fileID: 0}
   screenToHide: {fileID: 0}
   levelToLoad: 0
