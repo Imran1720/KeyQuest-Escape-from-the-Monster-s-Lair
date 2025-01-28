@@ -14,20 +14,21 @@ public class Door : InteractableObjects
         }
     }
 
-    //This method gets called when iteracted with player
-    //This method is responsible to  perform certain actions when colliding with player
+    //This method gets called when interacted with player
+    //This method is responsible to open gate
     protected override void PerformTriggerAction(PlayerController playerController)
     {
-        //base.PerformTriggerAction(playerController);
+        //Door glows when player is within interaction zone
         doorAnimator.SetBool("NearDoor", true);
         if (uiManager.GetLevelCompletionStatus())
         {
+            //Door Opens
             soundManager.PlaySFXSound(Sounds.DoorOpen);
             doorAnimator.SetBool("KeyCollected", true);
         }
     }
 
-
+    //This method removes door glow.
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)

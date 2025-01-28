@@ -47,8 +47,8 @@ public class Key : InteractableObjects
         }
     }
 
-    //This method gets called when iteracted with player
-    //This method is responsible to  perform certain actions when colliding with player
+    //This method gets called when interacted with player
+    //This method is used to detect player and collect the key
     protected override void PerformTriggerAction(PlayerController playerController)
     {
         soundManager.PlaySFXSound(Sounds.Collect);
