@@ -1,4 +1,4 @@
-# 2D-Platformer-Game
+# KeyQuest: Escape from the Monster's Lair
 In this 2D platformer, players must navigate through five challenging levels, with the first level unlocked. To unlock subsequent levels, players must collect keys scattered throughout each stage, opening portals to advance. Along the way, they’ll face patrolling enemies on platforms and deadly spikes—both of which cause the player to lose one of their three lives. With only three lives to complete each level, players must use quick reflexes and strategy to avoid hazards, defeat enemies, and collect the keys to progress. Can you survive the dangers and unlock all the levels to complete the game?
 
 ### Features:
