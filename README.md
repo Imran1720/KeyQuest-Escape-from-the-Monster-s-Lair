@@ -1,6 +1,14 @@
 # KeyQuest: Escape from the Monster's Lair
 In this 2D platformer, players must navigate through five challenging levels, with the first level unlocked. To unlock subsequent levels, players must collect keys scattered throughout each stage, opening portals to advance. Along the way, they’ll face patrolling enemies on platforms and deadly spikes—both of which cause the player to lose one of their three lives. With only three lives to complete each level, players must use quick reflexes and strategy to avoid hazards, defeat enemies, and collect the keys to progress. Can you survive the dangers and unlock all the levels to complete the game?
 
+### Gameplay
+
+![Image](https://github.com/Imran1720/KeyQuest-Escape-from-the-Monster-s-Lair/blob/0e8d8eaa86472ad27df723b083d09caf5d15123a/Attachments/Gameplay.gif)
+### Screenshots
+
+![Image](https://github.com/Imran1720/KeyQuest-Escape-from-the-Monster-s-Lair/blob/f1c805a167083d8a3bcc4b70ed3755128ff03a1f/Attachments/Screenshot.png)
+
+
 ### Features:
 <ol>
 <li><b>Movement:</b> The character moves in two directions (⬅️➡️). And jump using Spacebar</li>
