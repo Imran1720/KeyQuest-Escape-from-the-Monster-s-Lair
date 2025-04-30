@@ -6,7 +6,7 @@ In this 2D platformer, players must navigate through five challenging levels, wi
 ![Image](https://github.com/Imran1720/KeyQuest-Escape-from-the-Monster-s-Lair/blob/0e8d8eaa86472ad27df723b083d09caf5d15123a/Attachments/Gameplay.gif)
 ### Screenshots
 
-![Image](https://github.com/Imran1720/KeyQuest-Escape-from-the-Monster-s-Lair/blob/f1c805a167083d8a3bcc4b70ed3755128ff03a1f/Attachments/Screenshot.png)
+![Image](https://github.com/Imran1720/KeyQuest-Escape-from-the-Monster-s-Lair/blob/73da2da67da0289f7613bd634ebe79c3ca80e108/Attachments/Screenshots.png)
 
 
 ### Features:
